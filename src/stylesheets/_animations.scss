@@ -1,0 +1,134 @@
+@import "./config";
+
+// KEYFRAMES
+    @keyframes toggleAudio {
+        0% {
+            transform: scale(100%);
+        }
+        50% {
+        transform: scale(90%);
+        // transform: scale(110%);
+        }
+        100% {
+            transform: scale(100%);
+        }
+    }
+
+
+// MINIPLAYER
+    // Mount - unmount miniplayer
+    .showminiplayer-enter {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    .showminiplayer-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 300ms, transform 500ms;
+    }
+    .showminiplayer-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .showminiplayer-exit-active {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 300ms, transform 500ms;
+    }
+
+    // Play - pause button
+    // .toggle-audio-enter {}
+    .toggle-audio-enter-active {
+        animation: toggleAudio 500ms ease-in-out;
+    }
+    // .toggle-audio-exit {}
+    .toggle-audio-exit-active {
+        animation: toggleAudio 500ms ease-in-out;
+    }
+
+
+
+// QUEUE TOASTER
+    // Mount - unmount toaster
+    .toaster-enter {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    .toaster-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 300ms, transform 500ms;
+    }
+    .toaster-exit {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .toaster-exit-active {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 300ms, transform 500ms;
+    }
+
+
+// MAXI PLAYER
+    // Mount - unmount maxiplayer
+    .showmaxiplayer-enter {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    .showmaxiplayer-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 600ms, transform 700ms;
+    }
+    .showmaxiplayer-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .showmaxiplayer-exit-active {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 600ms, transform 700ms;
+    }
+
+    // Player speed change
+    .playerspeed-transition-enter {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    .playerspeed-transition-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 300ms, transform 500ms;
+    }
+    .playerspeed-transition-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .playerspeed-transition-exit-active {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 300ms, transform 500ms;
+    }
+
+
+// HEADER 
+    // Mount - unmount profile navigation
+    .nav-transition-enter {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    .nav-transition-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 300ms;
+    }
+    .nav-transition-exit {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .nav-transition-exit-active {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 300ms;
+    }

@@ -1,0 +1,86 @@
+@import "./config";
+
+.playerspeed {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    .playerspeed-top {
+        width: 100vw;
+        height: 40px;
+        backdrop-filter: blur(10px);
+    }
+    .playerspeed-overlay {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background-color: $black;
+        
+
+        .overlay-top {
+            @include flex(row, space-between, center);
+            padding: 28px;
+            border-bottom: 1px solid $grey;
+
+            .hidden {
+                opacity: 0;
+            }
+            p {
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            img {
+                &:hover {
+                    transform: scale(120%);
+                    transition: transform 50ms;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                &:active {
+                    transform: rotate(10deg);
+                    transition: all 50ms;
+                }
+            }
+        
+        }
+        .overlay-content {
+            padding-top: 100px;
+            @include flex(column, space-between, center);
+            .speed-item {
+                @include flex(row, flex-end, baseline);
+                width: 67px;
+                text-align: right;
+                &:hover {
+                    cursor: pointer;
+                }
+                .speed {
+                    color: $white;
+                    text-align: right;
+                    margin-top: 32px;
+                    font-weight: 700;
+
+                }
+                .selected {
+                    color: $blue;
+                    transition: color 300ms;
+                    
+                }
+                img {
+                    margin-right: 16px;
+                    opacity: 0;
+                }
+                .visible {
+                    opacity: 1;
+                    transition: opacity 300ms;
+                }
+            }
+            
+        }
+    }
+
+}
+

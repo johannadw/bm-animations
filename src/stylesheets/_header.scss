@@ -1,0 +1,93 @@
+@import "./config";
+
+header {
+    @include flex(row, space-between, center);
+    padding: 17px 20px;
+    width: calc(100vw - 40px);
+    border-bottom: 1px solid $grey;
+    background-color: $white;
+
+    .header-logo {
+        height: 23px;
+    }
+
+    .header-side {
+        @include flex(row, space-between, flex-end);
+
+        .header-side-item {
+            margin-left: 10px;
+            @include flex(column, space-between, center);
+            img {
+                height: 21px;
+            }
+            p {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.clickable {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.open-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.profilenav {
+    width: 100vw;
+    height: calc(100vh - 48px - 17px - 17px - 1px);
+    @include flex(row, flex-start, flex-start);
+    background-color: transparent;
+    position: fixed;
+    top: calc(48px + 17px + 17px + 1px);
+    left: 0;
+    overflow-y: hidden;
+    z-index:3;
+    
+    .nav-overlay {
+        width: calc(100vw - 295px);
+        height: 100%;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba($blue, 0.1);
+
+    }
+    .nav-content {
+        padding: 33px 24px;
+        width: 295px;
+        height: 100%;
+        background-color: $white;
+
+        .bold {
+            font-weight: 700;
+        }
+        .nav-welcome {
+            margin-bottom: 40px;
+        }
+        .nav-item {
+            @include flex(row, flex-start, center);
+            margin-bottom: 23px;
+            img {
+                margin-right: 18px;
+            }
+        }
+        .nav-callout {
+            @include flex(row, space-between, center);
+            padding: 12px 24px;
+            background-color: $blue;
+            margin-left: -24px;
+            margin-right: -24px;
+            margin-bottom: 23px;
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+

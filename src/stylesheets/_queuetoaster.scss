@@ -1,0 +1,54 @@
+@import "./config";
+
+.queuetoaster {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 8px;
+    width: calc(100vw - 8px - 8px - 20px - 20px);
+    height: calc(76px - 16px - 16px);
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0px 2px 14px -4px rgba(0, 0, 0, 0.3);
+    padding: 16px 20px;
+    @include flex(row, space-between, flex-start);
+
+    .queuetoaster-side {
+        @include flex(row, flex-start, flex-start);
+        img {
+            margin-right: 24px;
+        }
+        .queuetoaster-content {
+            @include flex(column, flex-start, flex-start);
+            .queuetoaster-actions {
+                @include flex(row, flex-start, baseline);
+                margin-top: 8px;
+                p {
+                    color: $blue;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .divider {
+                    height: 12px;
+                    width: 1px;
+                    background-color: $grey;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    .close-icon {
+        &:hover {
+            transform: scale(120%);
+            transition: transform 50ms;
+            cursor: pointer;
+        }
+    }
+}
+
+.move-toaster {
+    bottom: 74px;
+    transition: bottom 500ms;
+}

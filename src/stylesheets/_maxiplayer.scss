@@ -1,0 +1,178 @@
+@import "./config";
+
+.maxiplayer {
+    background-color: $black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+    @include flex(column, space-between, center);
+    .maxiplayer-top {
+        @include flex(row, space-between, center);
+        width: calc(100vw - 28px - 28px);
+        margin: 28px;
+        .hidden {
+            opacity: 0;
+        }
+        .audio-type {
+            color: $white;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        img {
+            &:hover {
+                transform: scale(120%);
+                transition: transform 50ms;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+    .maxiplayer-middle {
+        h1 {
+            color: $white;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .read-by {
+            color: $blue;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .article-date {
+            color: $darkgrey;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 450;
+        }
+    }
+    
+    .maxiplayer-bottom {
+        .maxiplayer-progress {
+            @include flex(row, space-between, center);
+            width: calc(100vw - 28px - 28px);
+            margin: 28px;
+
+            // .accent {
+            //     accent-color: #30cc7e;
+            // }
+
+            .maxiplayer-progress-current {
+                color: $blue;
+                font-weight: 450;
+                margin-right: 10px;
+                margin-top: 8px;
+            }
+
+            input[type="range"] {
+                -webkit-appearance: none;
+                appearance: none;
+                background: transparent;
+                cursor: pointer;
+                accent-color: #F55050;
+            }
+            input[type="range"]:focus {
+                outline: none;
+            }
+
+            // Chrome + Safari
+            input[type="range"]::-webkit-slider-runnable-track {
+                background: $grey;
+                height: 4px;
+                border-radius: 2px;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                margin-top: -6px; /* Centers thumb on the track */
+                background-color: $blue;
+                height: 16px;
+                width: 16px;   
+                border-radius: 50%; 
+            }
+            input[type="range"]:active::-webkit-slider-thumb {
+                transform: scale(110%);
+                outline: 6px solid rgba($blue, 0.6);
+                transition: all 100ms;
+            }
+                
+            // Firefox
+            input[type="range"]::-moz-range-track {
+                background: $grey;
+                height: 4px;
+                border-radius: 2px;
+            }
+            input[type="range"]::-moz-range-thumb {
+                border: none; /*Removes extra border that FF applies*/
+                border-radius: 0; /*Removes default border-radius that FF applies*/
+                background-color: $blue;
+                height: 16px;
+                width: 16px;   
+                border-radius: 50%; 
+            }
+            input[type="range"]:active::-moz-range-thumb {
+                transform: scale(110%);
+                outline: 6px solid rgba($blue, 0.6);
+                transition: all 100ms;
+            }
+            
+            #progress {
+                width: 260px;
+                // accent-color: red;
+            }
+
+            .maxiplayer-progress-time {
+                color: $grey;
+                font-weight: 450;
+                margin-left: 10px;
+                margin-top: 8px;
+            }
+        }
+
+        .maxiplayer-toggles {
+            @include flex(row, space-between, center);
+            margin: 40px;
+
+            .maxiplayer-toggle {
+                &:hover {
+                cursor: pointer;
+                }
+                &:active {
+                    transform: scale(80%);
+                    transition: all 300ms;
+                }
+            }
+            .maxiplayer-audio-toggle {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .maxiplayer-overlays {
+            @include flex(row, space-between, center);
+            margin: 28px;
+            p { 
+                color: $white;
+                font-size: 20px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
+

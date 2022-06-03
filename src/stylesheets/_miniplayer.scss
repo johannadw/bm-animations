@@ -1,0 +1,43 @@
+@import "./config";
+
+.miniplayer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    .miniplayer-progress-bar {
+        background-color: $grey;
+        height: 4px;
+        .miniplayer-progress {
+            border-radius: 0px 2px 2px 0px;
+            width: 100px;
+            background-color: $blue;
+            height: 4px;
+        }
+    }
+
+    .miniplayer-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 70px; 
+        background-color: $black;
+        @include flex(row, space-between, center);
+        .miniplayer-title {
+            color: $white;
+            font-weight: 500;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        img {
+            margin-left: 36px;
+            &:hover {
+                transform: scale(120%);
+                transition: transform 50ms;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
